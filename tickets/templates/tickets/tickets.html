@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>DjangTask</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'tickets/site.css' %}" />
+    </head>
+    <body class="main-container">
+        <h1 class="header">Welcome to the Ticketing System</h1>
+        <p>This is where all the requests will show up</p>
+        <p>Ticket 1: {{ ticket1 }}</p>
+    </body>
+</html>
