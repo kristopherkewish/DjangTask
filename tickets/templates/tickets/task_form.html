@@ -1,0 +1,23 @@
+{% extends 'tickets/base.html' %}
+
+{% block title %}{{ action }} Task - DjangTask{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title mb-4">{{ action }} Task in {{ project.name }}</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" class="btn btn-primary">{{ action }} Task</button>
+                        <a href="{% if task %}{% url 'task_detail' task.id %}{% else %}{% url 'project_board' project.id %}{% endif %}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

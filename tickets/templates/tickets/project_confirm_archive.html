@@ -1,0 +1,24 @@
+{% extends 'tickets/base.html' %}
+
+{% block title %}Archive Project - DjangTask{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title mb-4">Archive Project?</h2>
+                <p>Are you sure you want to archive the project <strong>{{ project.name }}</strong>?</p>
+                <p class="text-muted">Archived projects won't appear in your project list but can be restored later.</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" class="btn btn-danger">Archive Project</button>
+                        <a href="{% url 'project_board' project.id %}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
