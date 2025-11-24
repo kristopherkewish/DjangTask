@@ -4,9 +4,9 @@ from .models import Project, Column, Priority, RequestType, Task, Comment
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['name', 'owner', 'created_at']
+    list_display = ['name', 'owner', 'is_archived', 'created_at']
+    list_filter = ['is_archived', 'created_at']
     search_fields = ['name', 'description']
-    list_filter = ['owner', 'created_at']
 
 
 @admin.register(Column)

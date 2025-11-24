@@ -1,0 +1,16 @@
+{% extends 'tickets/base.html' %}
+
+{% block title %}Welcome - DjangTask{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8 text-center">
+        <h1 class="display-4 mb-4">Welcome to DjangTask</h1>
+        <p class="lead mb-4">A simple and powerful task management system for your projects.</p>
+        <div>
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-2">Login</a>
+            <a href="{% url 'password_reset' %}" class="btn btn-outline-secondary btn-lg">Reset Password</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
